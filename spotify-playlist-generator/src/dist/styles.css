@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style f */
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+* {
+  font-family: "PT Sans", sans-serif !important;
+}
+
+.bg-primary-custom {
+  background-color: #984447 !important;
+}
+
+.bg-dark-custom {
+  background-color: #101419;
+}
+
+.bg-secondary-custom {
+  background-color: #476c9b;
+  color: #fff !important;
+}
+
+.bg-secondary-light {
+  background-color: #468c98;
+}
+
+.bg-secondary-lighter {
+  background-color: #add9f4;
+}
+
+.color-primary {
+  color: #984447;
+}
+
+.color-dark {
+  color: #101419;
+}
+
+.color-secondary {
+  color: #476c9b;
+}
+
+.fade-in {
+  opacity: 100%;
+  transition: opacity 0.5s ease;
+}

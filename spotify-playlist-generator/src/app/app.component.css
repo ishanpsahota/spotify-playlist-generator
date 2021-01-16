@@ -1,0 +1,33 @@
+.bg-primary-custom {
+  background-color: #984447 !important;
+}
+
+.bg-dark-custom {
+  background-color: #101419;
+}
+
+.bg-secondary-cusstom {
+  background-color: #476c9b;
+}
+
+.bg-secondary-light {
+  background-color: #468c98;
+}
+
+.bg-secondary-lighter {
+  background-color: #add9f4;
+}
+
+.color-primary {
+  color: #984447;
+}
+
+.color-dark {
+  color: #101419;
+}
+
+.color-secondary {
+  color: #476c9b;
+}
+
+/*# sourceMappingURL=app.component.css.map */

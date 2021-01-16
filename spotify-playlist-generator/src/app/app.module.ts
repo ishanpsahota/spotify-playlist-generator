@@ -7,13 +7,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { PlaylistViewComponent } from './playlist-view/playlist-view.component';
+import { SpotifySearchComponent } from './spotify-search/spotify-search.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PlaylistViewComponent,
+    SpotifySearchComponent
   ],
   imports: [
     BrowserModule,

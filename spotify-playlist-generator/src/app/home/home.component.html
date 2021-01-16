@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="row w-100" id="home">
     <h1 class="display-1">Home</h1>    
     <div class="col-12 border-top px-md-4 py-md-3 p-2">                
@@ -12,8 +13,7 @@
                         <div class="form-group my-1">
                             <label for="playlist" class="form-label"> Playlist title </label>
                             <input type="text" class="form-control" [(ngModel)]="new_playlist_name" autocomplete="off" placeholder="Playlist title" name="playlist">
-                        </div>
-                        <p [class.fade-in]="new_playlist_name" *ngIf="new_playlist_name"> New Playlist: <span class="badge badge-pill bg-secondary-custom text-light"> {{new_playlist_name}} </span> </p>
+                        </div>                        
                         <div class="form-group my-2">
                             <button class="btn bg-secondary-custom" type="submit"> Add Playlist </button>
                         </div>                        
@@ -36,13 +36,13 @@
                             </select>
                         </div>
                         <div class="form-group my-1">
-                            <label class="form-label" for="artist"> Artist </label>
-                            <input type="text" class="form-control" placeholder="Artist name here" name="artist" [(ngModel)]="new_artist">
-                        </div>
-                        <div class="form-group my-1">
                             <label class="form-label" for="title"> Title </label>
                             <input type="text" class="form-control" placeholder="Title name here" name="title" [(ngModel)]="new_title">
-                        </div>                        
+                        </div>                       
+                        <div class="form-group my-1">
+                            <label class="form-label" for="artist"> Artist </label>
+                            <input type="text" class="form-control" placeholder="Artist name here" name="artist" [(ngModel)]="new_artist">
+                        </div>                         
                         <div class="form-group my-1">
                             <button class="btn bg-secondary-custom" type="submit"> Add Track </button>
                         </div>
@@ -54,28 +54,13 @@
                     <h4 class="card-title">Input </h4>
                 </div>
                 <div class="card-body">
-                    <p> New Playlist: <span class="badge badge-pill bg-secondary-custom text-light"> {{ new_playlist ? new_playlist : 'Nothing selected' }} </span> </p>
-                    <p> Chosen Playlist: <span class="badge badge-pill bg-secondary-custom text-light"> {{ chosen_playlist ? chosen_playlist : 'Nothing selected' }} </span> </p>
-                    <p> New Title: <span class="badge badge-pill bg-secondary-custom text-light"> {{ new_title ? new_title : 'Nothing selected' }} </span> </p>
-                    <p> New Artist: <span class="badge badge-pill bg-secondary-custom text-light"> {{ new_artist ? new_artist : 'Nothing selected' }} </span> </p>
+                    <p> New Playlist: <span class="badge badge-pill text-light" [class.bg-primary-custom]="new_playlist_name == null || new_playlist_name == ''" [class.bg-secondary-custom]="new_playlist_name"  > {{ new_playlist_name ? new_playlist_name : 'Nothing selected' }} </span> </p>
+                    <p> Chosen Playlist: <span class="badge badge-pill text-light" [class.bg-primary-custom]="chosen_playlist == null || chosen_playlist == ''" [class.bg-secondary-custom]="chosen_playlist"> {{ chosen_playlist ? chosen_playlist : 'Nothing selected' }} </span> </p>
+                    <p> New Title: <span class="badge badge-pill text-light" [class.bg-primary-custom]="new_title == null || new_title == ''" [class.bg-secondary-custom]="new_title"> {{ new_title ? new_title : 'Nothing selected' }} </span> </p>
+                    <p> New Artist: <span class="badge badge-pill text-light" [class.bg-primary-custom]="new_artist == null || new_artist == ''" [class.bg-secondary-custom]="new_artist"> {{ new_artist ? new_artist : 'Nothing selected' }} </span> </p>
                 </div>
-            </div>
-        </div>
-        <div class="row my-3">
-            <h3>Your playlists </h3>
-            <div class="card col-lg-3 col-md-4 col-sm-5 col-12 p-0 m-1" *ngFor="let list of lists">
-                <div class="card-header">
-                    <h5 class="card-title"> {{list.name | uppercase}} </h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush border-bottom">
-                        <li class="list-group-item" *ngFor="let song of list.songs" >
-                            <em><span class="color-secondary "> {{song.title}} </span> </em> by <span class="badge badge-pill bg-secondary-custom"> {{song.artist}} </span>
-                        </li>
-                    </ul>
-                    
-                </div>
-            </div>
+            </div>            
         </div>        
+        <app-playlist-view [lists]="lists" ></app-playlist-view>        
     </div>    
 </div>

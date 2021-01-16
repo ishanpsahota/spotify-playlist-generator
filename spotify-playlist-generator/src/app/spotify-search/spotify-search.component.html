@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="row w-100 py-5 px-3">
+    <h1>Search on Spotify</h1>
+    <div class="col-12 col-lg-6 col-md-8 col-sm-10 border-top py-3" id="input_box">
+        <form (ngOnSubmit)="show_results()">
+            <label for="search" class="h4 form-label"> Search query </label>
+            <input type="text" class="form-control" [(ngModel)]="search_query" placeholder="Search query here" name="search">
+        </form>
+    </div>
+    <div class="col-12" id="results">
+        <p *ngIf="search_query"> Showing results for {{search_query}} </p>
+        <p *ngIf="found_results && results" > {{results}} </p>
+        <p *ngIf="!found_results" > {{results}} </p>
+    </div>
+</div>

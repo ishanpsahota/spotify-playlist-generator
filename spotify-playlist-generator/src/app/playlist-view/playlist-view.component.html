@@ -1,0 +1,22 @@
+<div class="row w-100 p-3">
+    <h2 class="">Your playlists </h2>
+    <div class="card col-lg-3 col-md-4 col-sm-5 col-12 p-0 m-1" *ngFor="let list of lists">
+        <div class="card-header">
+            <h4>
+                {{list.name | uppercase}}
+            </h4>            
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush" *ngIf="list.songs.length > 0; else noSongs">
+                <li class="list-group-item" *ngFor="let song of list.songs">
+                    <span class="color-primary"> {{song.title}} </span> by <span class="badge badge-pill bg-secondary-custom"> {{song.artist}} </span>
+                </li>
+            </ul>
+            <ng-template #noSongs>
+                <div class="alert alert-primary" role="alert">
+                    <strong>No songs found! </strong>
+                </div>
+            </ng-template>            
+        </div>
+    </div>
+</div>

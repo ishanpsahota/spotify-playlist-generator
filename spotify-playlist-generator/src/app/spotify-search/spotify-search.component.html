@@ -1,6 +1,9 @@
 <app-header></app-header>
 <div class="row w-100 py-5 px-3">
     <h1>Search on Spotify</h1>
+    <div class="alert alert-danger" role="alert">
+        <strong>Warning!</strong> The Spotify API demands log in so not integrated!
+    </div>
     <div class="col-12 col-lg-6 col-md-8 col-sm-10 border-top py-3" id="input_box">
         <form (ngOnSubmit)="show_results()">
             <label for="search" class="h4 form-label"> Search query </label>
